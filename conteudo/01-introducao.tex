@@ -1,0 +1,36 @@
+%!TeX root=../tese.tex
+%("dica" para o editor de texto: este arquivo é parte de um documento maior)
+% para saber mais: https://tex.stackexchange.com/q/78101/183146
+
+%% ------------------------------------------------------------------------- %%
+\chapter{Introdução}
+\label{cap:introducao}
+
+Jogos digitais são produtos contemporâneos utilizados para obter experiências lúdicas em tempos de lazer, e podem oferecer finalidades educacionais ou terapêuticas, por oferecerem um ambiente seguro onde se propicia diversão, distração e entretenimento 
+\citep{Kent-2001}.
+
+A forma como jogos digitais disponibilizam tais características não permaneceu estática, com inovações conceituais e tecnológicas que acompanham e estimulam a evolução técnica da computação \citep{Hist_jogos_dig}. Através do uso de orientação a objetos e inteligência artificial, é possível desenvolver um sistema que demonstra um algoritmo genético em evolução contra um jogador.
+
+%% ------------------------------------------------------------------------- %%
+\section{Motivação}
+\label{sec:motivacao}
+
+O desenvolvimento de jogos digitais utiliza diversas técnicas de múltiplas áreas do conhecimento, como arte e design, além da computação \citep{CareerPathsintheGameIndustry}, assim como propicia e impulsiona o desenvolvimento das mesmas \citep{tsang_2021}. Tal confluência de várias áreas de conhecimento, assim como a disponibilização de um laboratório para o avanço de técnicas computacionais - devido a necessidades específicas como qualidade visual, desempenho de sistemas e orientação a objeto - sempre visando o entretenimento do público alvo torna a área interessante para a utilização do conhecimento obtido durante a graduação em ciência da computação.Em jogos conhecidos como \textit{single player}, onde um jogador humano concorre contra inimigos automatizados, existe um gênero onde grupos de oponentes atacam o jogador em turnos, chamados de ondas (conhecido como \textit{waves}). Em geral, tais jogos implementam esse comportamento utilizando fases, onde cada onda se torna mais forte para proporcionar um desafio crescente ao jogador, de forma pré-programada se repetindo sempre que um novo jogo é iniciado. 
+
+%[p. 1 / § 2] Antes da última, mencionar que a área de estudos de IA aplicada a jogos existe (citar alguns trabalhos de exemplo) para não ter uma mudança abrupta de assunto.
+
+
+%[p. 1 / § 5] Ao mencionar jogos, é bom citar a empresa desenvolvedora como se fossem autores, por exemplo: Spelunky (Yu e Hull, 2008)
+
+Gerar de maneira procedural os inimigos pode proporcionar um desafio mais variado e desafiador a quem está jogando \citep{shaker-16}, mantendo o \textit{design} das fases dos jogo, pois seria relativamente simples gerar inimigos baseados nas opções que um jogador fez e tornar a onda sempre mais forte. O jogo Spelunky \citet{Spelunky} demonstra como geração procedural de elementos - neste caso suas fases - pode deixar a experiência mais divertida e interessante, utilizando inteligência artificial ao invés de somente aleatorizar elementos \citep{spelunky:pcmag}.
+
+
+
+%Entre a seção 1.1 e 1.2 era bom dar uma introduzida bem conceitual a algoritmos genéticos. Algo tipo “Existem várias abordagens de IA para produzir essa curva de dificuldade, e algoritmos genéticos chamam atenção por A + B
+
+%% ------------------------------------------------------------------------- %%
+\section{Objetivos}
+\label{sec:objetivos}
+
+Considerando os pontos apresentados, buscou-se estudar a viabilidade de algoritmos genéticos serem generalizados para jogos com ondas de inimigos - um \hyperref[sec:jogos-ondas]{Tower Defense e um Top-Down Shooter} - e analisar a performance obtida. O sistema para a geração de ondas deve ser adaptativo ao estilo do jogador, detectando mudanças de estratégia e respondendo com alterações nas ondas, proporcionando maior desafio e variação nos inimigos, mas sem a necessidade de conhecimento profundo de mecânicas específicas do jogo ou a estratégia do jogador, que seriam mais adequadas a uma implementação pré-determinada na geração de inimigos.
+

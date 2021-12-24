@@ -1,0 +1,112 @@
+%% ------------------------------------------------------------------------- %%
+\chapter{Considerações Finais}
+\label{cap:consideracoes}
+
+%% ------------------------------------------------------------------------- %%
+\section{Análise dos Testes}
+\label{sec:analise-testes}
+
+Considerando os danos máximos teóricos e os danos médios dos casos repetidos, apresentados nas seções \ref{sec:uni-td} e \ref{sec:uni-ss}; os danos das ondas aleatórias mostrados em \ref{sec:rd-td} e \ref{sec:rd-ss}; e os testes do algoritmo genético em \ref{sec:td-fit-res} e \ref{sec:ss-fit-res}, utilizando os dados após a convergência dos algoritmos, obtemos as tabelas \ref{tab:td-allres-1} e \ref{tab:td-allres-2}, \ref{tab:ss-allres-1} e \ref{tab:ss-allres-2}:
+
+\pagebreak
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l|l}
+Torres Verdes                & Torres Vermelhas                    \\ \hline
+Máximo Calculado = 540.00    & Máximo Calculado = 540.00           \\
+\textbf{Fitness v3 = 482.57} & Repetido EnemyGreen = 360.00        \\
+\textbf{Fitness v2 = 478.61} & Repetido EnemyBlue = 355.85         \\
+Repetido EnemyGreen = 450.00 & Repetido EnemyRed = 180.00          \\
+\textbf{Fitness v1 = 307.04} & Repetido OneEach = 167.82           \\
+Repetido OneEach = 122.35    & \textbf{Fitness v3 = 167.44}        \\
+Repetido EnemyPurple = 90.06 & \textbf{Fitness v1 = 157.78}        \\
+Repetido EnemyRed = 89.90    & Repetido EnemyPurple = 127.60       \\
+\textbf{Aleatória = 81.42}   & \textbf{Aleatória = 125.35}         \\
+Repetido EnemyBlue = 60.68   & Repetido EnemyYellow = 50.58        \\
+Repetido EnemyYellow = 40.07 & Repetido EnemyOrange = 50.00        \\
+Repetido EnemyOrange = 39.93 & \textbf{Fitness v2 = Não Convergiu}
+\end{tabular}
+\caption{Dados agregados das médias de todos os testes, ordenado do maior para o menor no Tower Defense}
+\label{tab:td-allres-1}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l|l}
+\begin{tabular}[c]{@{}l@{}}Torres Verde\\  + Vermelha\end{tabular} & \begin{tabular}[c]{@{}l@{}}Torres Vermelha\\   + Verde\end{tabular} \\ \hline
+Máximo Calculado = 540.00                                          & Máximo Calculado = 540.00                                           \\
+\textbf{Fitness v1 = 463.26}                                       & \textbf{Fitness v1 = 459.30}                                        \\
+\textbf{Repetido EnemyGreen = 420.20}                              & Repetido EnemyGreen = 449.85                                        \\
+\textbf{Fitness v3 = 288.18}                                       & \textbf{Fitness v3 = 399.16}                                        \\
+\textbf{Repetido EnemyBlue = 220.18}                               & Repetido EnemyBlue = 329.82                                         \\
+Repetido EnemyRed = 148.50                                         & \textbf{Repetido EnemyRed = 149.90}                                 \\
+Repetido OneEach = 148.45                                          & \textbf{Repetido OneEach = 135.05}                                  \\
+Repetido EnemyPurple = 120.00                                      & Repetido EnemyPurple = 120.00                                       \\
+\textbf{Aleatória = 100.37}                                        & \textbf{Aleatória = 102.37}                                         \\
+Repetido EnemyYellow = 50.00                                       & Repetido EnemyYellow = 50.00                                        \\
+Repetido EnemyOrange = 44.50                                       & Repetido EnemyOrange = 49.45                                        \\
+\textbf{Fitness v2 = Não Convergiu}                                & \textbf{Fitness v2 = Não Convergiu}                                
+\end{tabular}
+\caption{Dados agregados das médias de todos os testes, ordenado do maior para o menor no Tower Defense}
+\label{tab:td-allres-2}
+\end{table}
+
+Em apenas 3 casos no jogo \textit{Tower Defense} o algoritmo genético foi capaz de atingir o maior dano, excluindo o dano teórico que só acontece quando o jogador não participa da partida - não faz nenhum tipo de \textit{input} exceto iniciar o jogo. Nos testes com as torres heterogêneas (Verde + Vermelha e Vermelha + Verde) o algoritmo genético com a versão v1 ultrapassou o dano de casos repetidos e para o caso com Torres Verdes a versão v3 consegue causar dano máximo. O projeto não teve como objetivo criar um oponente imbatível, para isso seria mais simples analisar como o jogador dispôs elementos de jogo e a partir disso desenvolver métodos pré-definidos de contra-ataque; ou até mesmo sempre utilizar ondas repetidas que maximizassem o dano, mas tais estratégias poderiam tornar o jogo frustrante ou repetitivo. Fazer com que a composição das ondas de inimigos de adéquem às condições de jogo é mais interessante, e o fato das ondas produzidas sempre superarem as ondas aleatórias neste caso mostram que uma potencial solução está sendo encontrada.
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l|l}
+\begin{tabular}[c]{@{}l@{}}Nave Parada\\ Disparo Amarelo\end{tabular} & \begin{tabular}[c]{@{}l@{}}Nave Movendo\\ Disparo Amarelo\end{tabular} \\ \hline
+Máximo Calculado = 360.00                                             & Máximo Calculado = 360.00                                              \\
+Inimigo3 = 314.93                                                     & Inimigo3 = 213.20                                                      \\
+Inimigo2 = 299.78                                                     & Inimigo2 = 184.61                                                      \\
+OneEach = 82.75                                                       & Inimigo1 = 130.10                                                      \\
+Inimigo1 = 181.50                                                     & \textbf{Aleatório = 124.95}                                            \\
+\textbf{Aleatório = 181.26}                                           & OneEach = 100.85                                                       \\
+\textbf{Fitness v1 = 163.54}                                          & Inimigo4 = 80.69                                                       \\
+\textbf{Fitness v2 = 147.66}                                          & Inimigos = 67.79                                                       \\
+Inimigo4 = 120.00                                                     & Inimigo5 = 39.23                                                       \\
+Inimigos = 120.00                                                     & \textbf{Fitness v1 = Não convergiu}                                    \\
+Inimigo5 = 60.00                                                      & \textbf{Fitness v2 = Não convergiu}                                   
+\end{tabular}
+\caption{Dados agregados das médias de todos os testes, ordenado do maior para o menor no Space Shooter}
+\label{tab:ss-allres-1}
+\end{table}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{l|l}
+\begin{tabular}[c]{@{}l@{}}Nave Parada\\ Disparo Vermelho\end{tabular} & \begin{tabular}[c]{@{}l@{}}Nave Movendo\\ Disparo Vermelho\end{tabular} \\ \hline
+Máximo Calculado = 360.00                                              & Máximo Calculado = 360.00                                               \\
+\textbf{Inimigo3 = 241.60}                                             & Inimigo3 = 169.87                                                       \\
+\textbf{Inimigo2 = 240.94}                                             & Inimigo2 = 169.67                                                       \\
+OneEach = 125.99                                                       & OneEach = 96.99                                                         \\
+\textbf{Aleatório = 123.66}                                            & \textbf{Aleatório = 91.77}                                              \\
+Inimigo4 = 106.00                                                      & \textbf{Inimigo4 = 76.29}                                               \\
+Inimigos = 102.44                                                      & \textbf{Inimigos = 65.89}                                               \\
+Inimigo5 = 62.57                                                       & Inimigo5 = 39.26                                                        \\
+\textbf{Inimigo1 = 27.60}                                              & \textbf{Inimigo1 = 24.60}                                               \\
+\textbf{Fitness v1 = Não convergiu}                                    & \textbf{Fitness v1 = Não convergiu}                                     \\
+\textbf{Fitness v2 = Não convergiu}                                    & \textbf{Fitness v2 = Não convergiu}                                     \\
+Repetido EnemyOrange = 39.93                                           & \textbf{Fitness v2 = Não Convergiu}                                    
+\end{tabular}
+\caption{Dados agregados das médias de todos os testes, ordenado do maior para o menor no Space Shooter}
+\label{tab:ss-allres-2}
+\end{table}
+
+Em contraponto, no jogo \textit{Space Shooter}, nenhuma versão consegue convergir em danos acima das ondas aleatórias, apesar de demonstrar potencial para isso contra a Nave Parada com Disparo Vermelho, mostrada no Gráfico \ref{fig:fit-ss-rs} - a taxa de dano é decrescente neste caso, então é possível que com mais ondas o algoritmo piore em relação ao aleatório. Em particular, nos testes com a Nave Parada e Disparo Amarelo (Gráfico \ref{fig:fit-ss-ys}) e Nave Parada com Disparo Vermelho (Gráfico \ref{fig:fit-ss-rs}) a versão v3 conseguiu aumentar o dano nas primeiras ondas, o que pode indicar compatibilidade em partidas curtas ou com redução mais agressiva na possibilidade de mutação, mas seriam necessários testes para confirmar tal possibilidade. No geral, é possível que a natureza menos determinística do estilo de jogo - onde é possível se movimentar para evadir inimigos, deixar de atacar algum oponente pra focar em outro, faça com que o algoritmo genético não seja tão eficiente quanto no \textit{Tower Defense}, que é um jogo mais estático e de comportamento bem definido - as torres não podem ser alteradas durante a onda, e todos os inimigos devem ser atacados para uma defesa efetiva. Seria possível alterar propriedades do \textit{Space Shooter} para diminuir a aleatoriedade da partido - por exemplo, pré-definir pontos de \textit{spawn} dos inimigos - mas acreditou-se que tais mudanças alterariam a natureza do jogo para forçar este se adequar ao projeto. Outro ponto levantado foi em relação à adequação da função \textit{fitness} que poderia levar em conta o dano causado pelos inimigos, já que a função prioriza muito a sobrevivência ao invés desse fator importante de métrica e os inimigos que mais sobrevivem eram justamente os que causavam menos dano.
+
+%% ------------------------------------------------------------------------- %%
+\section{Trabalhos Futuros}
+\label{sec:futuro}
+
+Considerando a efetividade do algoritmo genético no \textit{Tower Defense}, seria interessante estender os testes para geração de ondas com mudanças entre elas, pois num jogo normal o jogador iria adicionar ou aprimorar torres; o que implica que o algoritmo genético teria que potencialmente reiniciar o processo de convergência para uma geração ótima diferente do anterior. Também pode ser relevante considerar o dano coletivo ao invés de somente o individual dos inimigos, dando possibilidade do algoritmo detectar que está desviando de um estado maximal. Outro ponto que foi excluído por questões de tempo foram testes reais, com jogadores humanos, para obter \textit{feedback} sobre pontos como duração de jogo e escala de dificuldade - informações como essas permitiriam ajustes e testes posteriores em áreas como mutação e outros modelos de \textit{fitness} que seriam mais apropriados caso fossem necessários diferentes velocidade de convergência e escalada de dificuldade.
+
+%% ------------------------------------------------------------------------- %%
+\section{Conclusão}
+\label{sec:conclusao}
+
+Com os resultados obtidos, fica aparente que o algoritmo evolutivo implementado se mostrou mais adequado ao ambiente determinístico do jogo \textit{Tower Defense}, ao invés da aleatoriedade do \textit{Space Shooter}, causados pelas diferentes possibilidades de tiro (depende da primeira detecção do inimigo) e em dois testes da movimentação da nave. Seria possível tornar o \textit{Space Shooter} mais estático, com locais de \textit{spawn} mais distribuídos e pré-definidos, mas ao mesmo tempo o \textit{Tower Defense} deveria se tornar mais dinâmico, com as torres sendo atualizadas e adicionadas, alterando o ambiente onde o algoritmo genético está buscando evoluir. Dentro destes cenários, o projeto termina sem que seja possível verificar quais alterações seriam mais relevantes, tampouco as diversas adaptações que poderiam ser feita no código, buscando aceleração da convergência e evitando fuga de danos maximais. Ficou claro a infinidade de possibilidades a serem exploradas em um projeto com este tema.
+
+De maneira mais pessoal, a primeira dificuldade da realização do trabalho foi a definição da proposta, posto que como grupo, cada um tinha diferentes ideias, porém eram vagas e carecendo de rigor e objetivo necessário. Para buscar desenvolver novas habilidades, além de exercer outras obtidas durante a graduação, o desenvolvimento de uma inteligência artificial para jogos, assim como o desenvolvimento dos jogos em si, pareceu ser uma proposta interessante. Inicialmente o projeto pareceu simples, mas com o decorrer do tempo o entendimento do problema não se mostrou trivial, e foi necessário algum tempo para compreensão da profundidade da proposta. Tempo excessivo foi gasto na obtenção de fontes e literatura sobre o tema, mas talvez parte dele pudesse ter sido melhor aproveitado na implementação, que se alongou para familiarização de todos os membros com o \textit{Godot} e depois para o desenvolvimento dos jogos. Com os jogos prontos e o algoritmo prototipado, a definição dos testes e coleta de dados se mostrou relativamente demorada, mas foram um dos estágios mais interessantes do trabalho, pois a existência de métricas para qualificar o algoritmo se mostrou muito útil e interessante. Apesar do desejo de aprimorar mais o algoritmo e os jogos, não há tempo hábil para o mesmo, mas a experiência se mostrou edificante e enriquecedora, e demonstrou bem como desenvolver um experimento com algum rigor científico.

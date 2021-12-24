@@ -1,0 +1,86 @@
+%!TeX root=../tese.tex
+%("dica" para o editor de texto: este arquivo é parte de um documento maior)
+% para saber mais: https://tex.stackexchange.com/q/78101/183146
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%% METADADOS DA TESE %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Estes comandos definem o título e autoria do trabalho e devem sempre ser
+% definidos, pois além de serem utilizados para criar a capa, também são
+% armazenados nos metadados do PDF.
+\title{
+    % Obrigatório nas duas línguas
+    titlept={Algoritmo Genético para Geração de Ondas de Inimigos em Jogos},
+    titleen={Genetic Algorithm for Generation of Enemy Waves in Games},
+    % Opcional, mas se houver deve existir nas duas línguas
+    %subtitlept={um subtítulo},
+    %subtitleen={a subtitle},
+    % Opcional, para o cabeçalho das páginas
+    %shorttitle={Título curto},
+}
+
+\author{Daniel Yoshio Hotta\\
+        Rafael Gonçalves Pereira da Silva\\
+        Ricardo Akira Tanaka}
+
+% Para TCCs, este comando define o supervisor
+\orientador{Prof. Dr. Marco Dimas Gubitoso}
+
+% Se não houver, remova; se houver mais de um, basta
+% repetir o comando quantas vezes forem necessárias
+\coorientador{Wilson Kazuo Mizutani}
+%\coorientador[fem]{Profª. Drª. Beltrana de Tal}
+
+% A página de rosto da versão para depósito (ou seja, a versão final
+% antes da defesa) deve ser diferente da página de rosto da versão
+% definitiva (ou seja, a versão final após a incorporação das sugestões
+% da banca).
+\defesa{
+  nivel=tcc, % mestrado, doutorado ou tcc
+  % É a versão para defesa ou a versão definitiva?
+  %definitiva,
+  % É qualificação?
+  %quali,
+  programa={Ciência da Computação},
+  %membrobanca={Profª. Drª. Fulana de Tal (orientadora) -- IME-USP [sem ponto final]},
+  % Em inglês, não há o "ª"
+  %membrobanca{Prof. Dr. Fulana de Tal (advisor) -- IME-USP [sem ponto final]},
+  %membrobanca={Prof. Dr. Ciclano de Tal -- IME-USP [sem ponto final]},
+  %membrobanca={Profª. Drª. Convidada de Tal -- IMPA [sem ponto final]},
+  % Se não houver, remova
+  %apoio={Durante o desenvolvimento deste trabalho o autor
+  %       recebeu auxílio financeiro da XXXX},
+  local={São Paulo},
+  data=2021-12-24, % YYYY-MM-DD
+  % Se quiser estabelecer regras diferentes, converse com seu
+  % orientador
+  direitos={Autorizo a reprodução e divulgação total ou parcial
+            deste trabalho, por qualquer meio convencional ou
+            eletrônico, para fins de estudo e pesquisa, desde que
+            citada a fonte.},
+  % Isto deve ser preparado em conjunto com o bibliotecário
+  %fichacatalografica={nome do autor, título, etc.},
+}
+
+% As palavras-chave são obrigatórias, em português e
+% em inglês. Acrescente quantas forem necessárias.
+\palavrachave{algoritmos genéticos}
+\palavrachave{algoritmos evolutivos}
+\palavrachave{geração de inimigos}
+\palavrachave{jogos}
+
+\keyword{genetic algorithms}
+\keyword{evolutionary algorithm}
+\keyword{enemy generator}
+\keyword{games}
+
+% O resumo é obrigatório, em português e inglês.
+
+\resumo{
+Este trabalho se propõe a estudar a viabilidade de um algoritmo evolutivo para geração de ondas de oponentes em jogos cujo o objetivo do jogador é eliminá-los. Para ampliar o escopo do projeto, foi definido que o algoritmo desenvolvido deveria ser o mais genérico possível, possibilitando sua implementação em diversos jogos, apenas com pequenos refatoramentos do código. Considerando a existência de ondas de inimigos, cujos individuais podem obter sucesso ou fracasso contra o jogador, definiu-se que um algoritmo genético seria apropriado, já que o mesmo poderia usar as ondas como população e conseguiria obter candidatos de sucesso para a próxima onda, sem a necessidade de características específicas do jogo, e se adaptando a mudanças nas condições ou da estratégia de quem está jogando. Foram desenvolvidos dois protótipos de jogos dentro das categorias delimitadas, um \textit{Tower Defense} e um \textit{Top-Down Shooter}, com ferramentas de código aberto como a \textit{game engine Godot}. Os jogos foram selecionados por possuírem suficientes características comuns entre sí, permitindo a implementação do mesmo algoritmo com pequenas adaptações, e ao mesmo tempo diferentes o suficiente para produzirem experiências e resultados diferentes. Durante o desenvolvimento diversos fatores e decisões se mostraram essenciais ao algoritmo, como diferentes necessidades de \textit{fitness} e mutações em cada jogo e entre ondas de inimigos. Finalmente foram desenvolvidos métodos de teste e métricas de avaliação para, com dados objetivos, obter indícios de que o algoritmo seria superior a implementações ingênuas como uma geração aleatória. Os resultados aparentam maior adequação a jogos mais determinísticos, onde um ambiente mais estático acaba favorecendo o algoritmo.
+}
+
+\abstract{
+This project is a study around the viability of an evolutionary algorithm for generating waves of enemies in games, where the player`s objective is eliminating them. To expand the subject, it was defined that the algorithm should be as generic as possible to allow its implementation in other games, with minor code refactoring. Considering the enemy wave as a group of individuals that can end up in a success or failure in the round, a genetic algorithm seemed suitable, since it would be able to use the waves as population, with each individual a candidate for the next wave, representing the next generation of individuals. The algorithm does not depend on extensive knowledge about the game mechanics, being able to adapt to ambient changes and player strategy. Two game prototypes were developed, a Tower Defense and a Top-Down Shooter, using open source tools such as the Godot Game Engine. The games were selected due to its common characteristics in style, which allows using the same evolutionary algorithm, but at the same time they diverge in gameplay and strategy, producing different results and experiences. During development several factors and decisions were key to the algorithm, such as the fitness and mutation calculations for each game, and each wave. To enable performance analysis, testing methods and evaluation metrics were developed, enabling objective data to be gathered and measured against randomly generating enemies. Data analysis showed that the genetic algorithm performs above other naive methods, but is more successful in deterministic games, where a more stable environment favors the algorithm.
+}
